@@ -1,75 +1,37 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+```shell
+$ git chekout https://github.com/koakh/Nest9DynamicModulesCONFIG_OPTIONS.git
+$ cd Nest9DynamicModulesCONFIG_OPTIONS
+$ npm i
+$ npm run start:debug
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+[Nest] 6029  - 09/08/2022, 12:51:48 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 6029  - 09/08/2022, 12:51:48 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +22ms
+[Nest] 6029  - 09/08/2022, 12:51:48 AM   ERROR [ExceptionHandler] Nest can't resolve dependencies of the ConfigService (?). Please make sure that the argument CONFIG_OPTIONS at index [0] is available in the TestModule context.
 
-## Description
+Potential solutions:
+- If CONFIG_OPTIONS is a provider, is it part of the current TestModule?
+- If CONFIG_OPTIONS is exported from a separate @Module, is that module imported within TestModule?
+  @Module({
+    imports: [ /* the Module containing CONFIG_OPTIONS */ ]
+  })
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Error: Nest can't resolve dependencies of the ConfigService (?). Please make sure that the argument CONFIG_OPTIONS at index [0] is available in the TestModule context.
 
-## Installation
+Potential solutions:
+- If CONFIG_OPTIONS is a provider, is it part of the current TestModule?
+- If CONFIG_OPTIONS is exported from a separate @Module, is that module imported within TestModule?
+  @Module({
+    imports: [ /* the Module containing CONFIG_OPTIONS */ ]
+  })
 
-```bash
-$ npm install
+    at Injector.lookupComponentInParentModules (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/injector.js:241:19)
+    at Injector.resolveComponentInstance (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/injector.js:194:33)
+    at resolveParam (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/injector.js:116:38)
+    at async Promise.all (index 0)
+    at Injector.resolveConstructorParams (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/injector.js:131:27)
+    at Injector.loadInstance (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/injector.js:57:13)
+    at Injector.loadProvider (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/injector.js:84:9)
+    at async Promise.all (index 4)
+    at InstanceLoader.createInstancesOfProviders (/mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/instance-loader.js:44:9)
+    at /mnt/storage/Development/@SurrealDB/Nest9DynamicModulesCONFIG_OPTIONS/node_modules/@nestjs/core/injector/instance-loader.js:29:13
 ```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
