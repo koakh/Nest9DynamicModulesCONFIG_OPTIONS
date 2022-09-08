@@ -11,7 +11,7 @@ import { TestModule } from './test/test.module';
     TestModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ConfigService],
   exports: [ConfigModule]
 })
 export class AppModule { }
